@@ -112,6 +112,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   custom_data = filebase64("cloud-init.yaml")
 }
 
+# show public ips of vms created
 output "vm_public_ips" {
   value = [
     for ip in azurerm_public_ip.public_ip : ip.ip_address
