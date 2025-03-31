@@ -109,6 +109,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
     version   = "latest"
   }
 
+  # apply custom config to vms created
   custom_data = filebase64("cloud-init.yaml")
 }
 
